@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的小天地</title>
+    <style>
+        /* 这里是样式设置，你可以不用太懂，照抄即可 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌍 我们的小天地</h1>
+        <p>记录我们的故事与奇思妙想</p>
+    </header>
+
+    <!-- 第一部分：探索世界 -->
+    <section id="travel">
+        <h2>🚀 探索世界</h2>
+        <p>这是我们一起去过的地方，每一张照片都是一个故事。</p>
+        <div class="photo-grid">
+            <!-- 这里是你的照片位置 -->
+            <!-- 请看下文的“插入照片步骤” -->
+            <img src="""D:\无锡寻春.jpg""" alt="无锡寻春">
+            <img src=""D:\中秋共度.jpg"" alt="中秋共度">
+        </div>
+    </section>
+
+    <!-- 第二部分：共脑记录 -->
+    <section id="memory" style="background-color: #eef;">
+        <h2>🧠 共脑记录</h2>
+        <p>这是我们思想碰撞的火花，以及各种有趣的日常碎片。</p>
+        <div class="photo-grid">
+            <!-- 这里是你的照片位置 -->
+            <img src=""D:\共脑1.jpg"" alt="International Friendship Day!!!">
+         
+        </div>
+    </section>
+
+    <footer>
+        <p>©  我们的秘密基地</p>
+    </footer>
+
+</body>
+</html>
