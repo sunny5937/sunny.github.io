@@ -1,0 +1,14 @@
+# OS 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# 编辑器临时文件
+~$*
+*.tmp
+*.swp
+*~
+
+# AutoCAD 备份（可选：如不想跟踪 .bak 可保留此行）
+# *.bak
