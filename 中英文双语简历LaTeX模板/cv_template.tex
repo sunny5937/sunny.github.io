@@ -1,0 +1,267 @@
+% !TEX program = xelatex
+%=====================================================================
+%  ECE / EECS One-Page Resume  (XeLaTeX)
+%  Style reference: MIT EECS / CMU ECE / Stanford CS / Berkeley EECS
+%  Compile with XeLaTeX (VSCode + LaTeX Workshop recipe: "xelatex")
+%=====================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[left=1.4cm,right=1.4cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+% \usepackage{titlerule}   % 若无此包，删除本行即可，下面的规则线仍可用
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[overload]{textcase} % LaTeX-aware \MakeUppercase，不破坏 \color 等命令
+\usepackage{fontawesome5} % 图标：邮箱/GitHub 等（可选，缺失可注释）
+
+% ---- 字体（XeLaTeX 专用，TeXLive 自带，无需下载）---------------------
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}      % 正文衬线体（类 Times，但更精致）
+\newfontfamily\headingfont{TeX Gyre Heros} % 标题无衬线体（类 Helvetica）
+% 中文字体支持
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[AutoFakeBold=2.5, AutoFakeSlant=0.2]   % 中文正文（宋体），自动伪粗体/伪斜体
+\setCJKsansfont{Microsoft YaHei}[AutoFakeBold=2.5]              % 中文无衬线（微软雅黑），自动伪粗体
+% 若编译报字体错误，注释掉上面几行 fontspec/xeCJK 相关设置即可。
+% ---------------------------------------------------------------------
+
+\pagestyle{empty}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+% ---- 段落列表样式 ----------------------------------------------------
+\setlist[itemize]{
+  leftmargin=1.3em,
+  itemsep=1.5pt,
+  topsep=2pt,
+  parsep=0pt,
+  label=\textbullet
+}
+
+% ---- 主色调 ---------------------------------------------------------
+\definecolor{mainblue}{HTML}{00509E}
+\colorlet{MAINBLUE}{mainblue}
+
+% ---- Section 标题：全大写 + 下方整条横线 ------------------------------
+\titleformat{\section}
+  {\headingfont\large\bfseries\color{mainblue}\MakeUppercase}
+  {}{0em}{}[\vspace{-6pt}{\color{mainblue}\rule{\textwidth}{1.2pt}}]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% ---- 便捷宏 ----------------------------------------------------------
+% 项目条目：左标题（加粗），右侧可放技术栈/时间
+\newcommand{\project}[2]{%
+  \vspace{3pt}%
+  \noindent\textbf{#1}\hfill{\small\textit{#2}}\par
+  \vspace{1pt}%
+}
+
+% 学历/经历条目：左机构，右时间
+\newcommand{\entry}[2]{%
+  \noindent\textbf{#1}\hfill{#2}\par
+}
+
+\begin{document}
+
+%=====================================================================
+%  HEADER  —— 姓名与联系方式（请填写）
+%=====================================================================
+\begin{center}
+  {\headingfont\Huge\bfseries your name}\\[4pt]
+  {\normalsize ECE Undergraduate | Hardware + Software Builder}\\[6pt]
+  {\small
+    \faEnvelope\ \href{mailto:your mail address}{your mail address}
+    \quad|\quad
+    \faPhone\ +86 your phone number
+    \quad|\quad
+    \faGithub\ \href{https://github.com/yourname}{github.com/yourname}
+  }
+\end{center}
+
+%=====================================================================
+%  EDUCATION
+%=====================================================================
+\section{Education}
+
+\entry{Zhejiang University}{Expected Graduation: 20xx}
+Bachelor of Engineering in Electronic and Computer Engineering \hfill GPA: \textbf{4.00} / 4.00\par %这里请改成你的专业和成绩
+\vspace{2pt}
+% \textbf{Relevant Coursework:} Signals and Systems, Digital Circuits, Analog Circuits,
+% Electronic circuit design experiment, Artificial Intelligence, Electromagnetic Field and Wave...
+
+%=====================================================================
+%  TECHNICAL SKILLS
+%=====================================================================
+\section{Technical Skills}
+
+%这里提到的软件和技术只是举个例子，具体请根据你自己的情况修改
+
+\begin{tabular}{@{}p{3.2cm}@{}p{14cm}@{}}
+  \textbf{Programming}      & Python (Advanced), C/C++, MATLAB \\[3pt]
+  % \textbf{AI / Vision}      & OpenCV, NumPy, PyTorch, scikit-learn \\[3pt]
+  \textbf{Embedded}         & STM32, UART, Xilinx, Raspberry Pi \\[3pt]
+  \textbf{Hardware}         & Altium Designer, Pspice, Oscilloscope, Signal Generator\\[3pt]
+  \textbf{Tools}            & Git, VS Code, Keil, STM32CubeMX \\
+\end{tabular}
+
+%=====================================================================
+%  SELECTED PROJECTS
+%=====================================================================
+\section{Builds \& Projects}
+
+% ---- 1. sth.1 ----
+\project{your project name}{subject / tech stack}
+\begin{itemize}
+  \item achieved something
+  \item implemented something
+\end{itemize}
+
+% ---- 2. sth.2 ----
+\project{your project name}{subject / tech stack}
+\begin{itemize}
+  \item achieved something
+  \item implemented something
+\end{itemize}
+
+% ---- 3. sth.3 ----
+\project{your project name}{subject / tech stack}
+\begin{itemize}
+  \item achieved something
+  \item implemented something
+\end{itemize}
+
+% ---- 4. sth.4 ----
+\project{your project name}{subject / tech stack}
+\begin{itemize}
+  \item achieved something
+  \item implemented something
+\end{itemize}
+
+
+\section{Research Experience}
+
+\entry{your institution}{time period}
+\textit{Advisor: Professor xx}\
+\begin{itemize}
+  \item what you did in the research
+  \item what you learned.
+\end{itemize}
+
+\entry{your institution}{time period}
+\textit{Advisor: Professor xx}\
+\begin{itemize}
+  \item what you did in the research
+  \item what you learned.
+\end{itemize}
+%=====================================================================
+%  HONORS & AWARDS  (可选，暂留空)
+%=====================================================================
+\section{Honors \& Awards}
+\begin{itemize}
+  \item sth. you won
+  \item sth. you won
+\end{itemize}
+%=====================================================================
+%  LANGUAGES
+%=====================================================================
+\section{Languages}
+Chinese (Native) \quad|\quad English (\textbf{CET-4}: 665 / \textbf{CET-6}: 621)
+
+%=====================================================================
+%  PAGE 2: CHINESE VERSION
+%=====================================================================
+\newpage
+
+% 中文版重新定义 section 标题：取消 MakeUppercase，保留相同横线样式
+\titleformat{\section}
+  {\headingfont\large\bfseries\color{mainblue}}
+  {}{0em}{}[\vspace{-6pt}{\color{mainblue}\rule{\textwidth}{1.2pt}}]
+
+\begin{center}
+  {\headingfont\Huge\bfseries 你的名字}\\[4pt]
+  {\normalsize 某专业本科在读 | 软硬件协同开发}\\[6pt]
+  {\small
+    \faEnvelope\ \href{mailto:邮箱}{邮箱}
+    \quad|\quad
+    \faPhone\ +86 电话
+    \quad|\quad
+    \faGithub\ \href{https://github.com/}{github}
+  }
+\end{center}
+
+\section{教育背景}
+
+\entry{浙江大学}{预计毕业：20xx}
+某专业工学学士 \hfill 平均绩点：\textbf{4.00} / 4.00\par
+\textbf{核心课程}： 。。。等
+
+\section{技术能力}
+
+\begin{tabular}{@{}p{3.2cm}@{}p{14cm}@{}}
+  \textbf{编程语言}   & Python、C/C++、MATLAB \\[3pt]
+  \textbf{嵌入式开发}     & STM32、UART、Xilinx、Raspberry Pi \\[3pt]
+  \textbf{硬件开发}       & Altium Designer、Pspice等 \\[3pt]
+  \textbf{工具使用}       & Git、VS Code、Keil、STM32CubeMX \\
+\end{tabular}
+
+\section{项目经历}
+
+\project{\textbf{。。。}}{。。。}
+\begin{itemize}
+  \item 开发了。。。
+  \item 实现了。。。
+\end{itemize}
+
+\project{\textbf{。。。}}{。。。}
+\begin{itemize}
+  \item 构建了。。。
+  \item 完成了。。。
+  \item 。。。
+\end{itemize}
+
+\project{\textbf{。。。}}{。。。}
+\begin{itemize}
+  \item 构建了。。。
+  \item 完成了。。。
+  \item 。。。
+\end{itemize}
+
+\project{\textbf{。。。}}{。。。}
+\begin{itemize}
+  \item 构建了。。。
+  \item 完成了。。。
+  \item 。。。
+\end{itemize}
+
+\section{科研经历}
+
+\entry{\textbf{浙江大学。。。学院 }}{时间}
+\textit{导师：xx 教授}\
+\begin{itemize}
+  \item 参与。。。
+  \item 。。。
+\end{itemize}
+
+\entry{\textbf{浙江大学。。。学院 }}{时间}
+\textit{导师：xx 教授}\
+\begin{itemize}
+  \item 参与。。。
+  \item 。。。
+\end{itemize}
+
+\section{荣誉与奖项}
+\begin{itemize}
+  \item 。。
+  \item 。。
+  \item 。。
+\end{itemize}
+
+\section{语言能力}
+中文（母语）\quad|\quad 英语（\textbf{英语四级}：665 / \textbf{英语六级}：621）
+
+\end{document}
